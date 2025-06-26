@@ -134,5 +134,3 @@ loganalyzer analyze --help
 ```
 
 ---
-
-Si tu veux un README encore plus détaillé (badges, screenshots, etc.), ou une section sur la contribution, dis-le-moi !
