@@ -1,4 +1,4 @@
-module github.com/axellelanca/go_loganizer
+module github.com/KevinKalt0/loganizer
 
 go 1.24.3
 
