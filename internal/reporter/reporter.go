@@ -3,7 +3,7 @@ package reporter
 import (
 	"encoding/json"
 	"os"
-	"loganalyzer/internal/analyzer"
+	"github.com/KevinKalt0/loganizer/internal/analyzer"
 )
 
 func Export(results []analyzer.Result, path string) error {

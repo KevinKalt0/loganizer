@@ -1,9 +1,12 @@
 package analyzer
 
 import (
-	"loganalyzer/internal/config"
-	"github.com/KevinKalt0/loganalyzer/internal/analyzer"
-	"github.com/KevinKalt0/loganalyzer/internal/reporter"
+	
+	"math/rand"
+	"os"
+	"sync"
+	"time"
+	"github.com/KevinKalt0/loganizer/internal/config"
 	)
 
 type Result struct {
@@ -14,17 +17,8 @@ type Result struct {
 	ErrorDetails string `json:"error_details,omitempty"`
 }
 
-package analyzer
 
-import (
-"errors"
-"fmt"
-"math/rand"
-"os"
-"sync"
-"time"
-"loganalyzer/internal/config"
-)
+
 func init() {
 	rand.Seed(time.Now().UnixNano())
 	}
