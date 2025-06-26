@@ -92,11 +92,6 @@ Tester l'export``go run main.go analyze -c config.json -o report.json``
    go build -o loganizer .
    ```
 
-4. **Lancer l'outil**
-   ```sh
-   ./loganizer --help
-   ```
-
 ---
 
 ## Architecture technique
