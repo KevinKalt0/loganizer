@@ -2,7 +2,7 @@
 
 ## Description
 
-**Loganalyzer** est un outil en ligne de commande (CLI) écrit en Go, permettant d'analyser efficacement plusieurs fichiers de logs en parallèle, de centraliser les résultats et de générer des rapports détaillés.  
+**Loganizer** est un outil en ligne de commande (CLI) écrit en Go, permettant d'analyser efficacement plusieurs fichiers de logs en parallèle, de centraliser les résultats et de générer des rapports détaillés.  
 Il est conçu pour les administrateurs système et développeurs souhaitant automatiser l'analyse de journaux applicatifs ou serveurs.
 
 ---
@@ -26,13 +26,13 @@ Il est conçu pour les administrateurs système et développeurs souhaitant auto
 ### 1. **Analyser des logs**
 
 ```sh
-loganalyzer analyze --config config.json
+Tester l'export``go run main.go analyze -c config.json -o report.json``
 ```
 
 - `--config` ou `-c` : chemin vers le fichier de configuration JSON (obligatoire)
 - `--output` ou `-o` : chemin du rapport JSON à générer (optionnel)
 
-### 2. **Exemple de fichier de configuration**
+### 2. **Fichier de configuration**
 
 ```json
 [
@@ -51,23 +51,23 @@ loganalyzer analyze --config config.json
 
 ---
 
-## Exemple de rapport JSON généré
+## report JSON généré
 
 ```json
 [
   {
-    "log_id": "web-server-1",
-    "file_path": "test_logs/access.log",
-    "status": "OK",
-    "message": "Analyse terminée avec succès.",
-    "error_details": ""
+    "log_id": "db-server-3",
+    "file_path": "test_logs/mysql_error.log",
+    "status": "FAILED",
+    "message": "Fichier introuvable.",
+    "error_details": "CreateFile test_logs/mysql_error.log: The system cannot find the file specified."
   },
   {
     "log_id": "invalid-path",
-    "file_path": "test_logs/absent.log",
+    "file_path": "/non/existent/log.log",
     "status": "FAILED",
     "message": "Fichier introuvable.",
-    "error_details": "open test_logs/absent.log: no such file or directory"
+    "error_details": "CreateFile /non/existent/log.log: The system cannot find the path specified."
   }
 ]
 ```
@@ -78,7 +78,7 @@ loganalyzer analyze --config config.json
 
 1. **Cloner le dépôt**
    ```sh
-   git clone https://github.com/<votre-utilisateur>/<votre-repo>.git
+   git clone https://github.com/KevinKalt0/loganizer
    cd loganizer
    ```
 
@@ -89,12 +89,12 @@ loganalyzer analyze --config config.json
 
 3. **Compiler le projet**
    ```sh
-   go build -o loganalyzer .
+   go build -o loganizer .
    ```
 
 4. **Lancer l'outil**
    ```sh
-   ./loganalyzer --help
+   ./loganizer --help
    ```
 
 ---
@@ -111,31 +111,7 @@ loganalyzer analyze --config config.json
 
 ## Membres de l'équipe
 
-- *À compléter avec les noms/prénoms de l'équipe*
-
----
-
-## Pour aller plus loin (bonus possibles)
-
-- Ajout d'une sous-commande `add-log` pour enrichir le fichier de configuration
-- Filtrage des résultats par statut (`--status OK/FAILED`)
-- Ajout d'un horodatage automatique dans le nom du rapport exporté
-
----
-
-## Licence
-
-MIT
-
----
-
-## Aide
-
-Pour afficher l'aide :
-```sh
-loganalyzer --help
-loganalyzer analyze --help
-```
-```
-
----
+- DYLAN LERAY 
+- RYAN HO 
+- NATHANIEL ANTON HILLARY
+- KEVIN KALTENIS 
