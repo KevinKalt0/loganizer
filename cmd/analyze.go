@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/axellelanca/go_loganizer/internal/config"
+	"github.com/KevinKalt0/go_loganizer/internal/config"
 	"github.com/spf13/cobra"
 	"os"
 )
