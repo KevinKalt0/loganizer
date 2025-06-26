@@ -2,16 +2,18 @@ package analyzer
 
 import "fmt"
 
-type LogError struct {
-	ID      string
-	Message string
-	Err     error
+type FileNotFoundError struct {
+	Path string
 }
 
-func (e *LogError) Error() string {
-	return fmt.Sprintf("[%s] %s: %v", e.ID, e.Message, e.Err)
+func (e *FileNotFoundError) Error() string {
+	return fmt.Sprintf("Fichier introuvable : %s", e.Path)
 }
 
-func (e *LogError) Unwrap() error {
-	return e.Err
+type ParsingError struct {
+	LogID string
+}
+
+func (e *ParsingError) Error() string {
+	return fmt.Sprintf("Erreur de parsing pour le log : %s", e.LogID)
 }
