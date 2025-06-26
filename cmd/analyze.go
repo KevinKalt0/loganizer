@@ -5,6 +5,8 @@ import (
 	"github.com/KevinKalt0/loganizer/internal/config"
 	"github.com/spf13/cobra"
 	"os"
+	"github.com/KevinKalt0/loganizer/internal/analyzer"
+	"github.com/KevinKalt0/loganizer/internal/reporter"
 )
 
 var (
@@ -34,5 +36,25 @@ var analyzeCmd = &cobra.Command{
 		for _, log := range logs {
 			fmt.Printf(" - ID: %s | Path: %s | Type: %s\n", log.ID, log.Path, log.Type)
 		}
+
+		fmt.Println("\nAnalyse en cours...")
+		results := analyzer.AnalyzeLogs(logs)
+
+		fmt.Println("\nRésultats :")
+		for _, res := range results {
+			fmt.Printf("ID: %s | Statut: %s | Message: %s\n", res.LogID, res.Status, res.Message)
+			if res.ErrorDetails != "" {
+				fmt.Printf("  -> Détail : %s\n", res.ErrorDetails)
+			}
+		}
+
+		if outputPath != "" {
+			if err := reporter.Export(results, outputPath); err != nil {
+				fmt.Printf("Erreur export JSON : %v\n", err)
+				os.Exit(1)
+			}
+			fmt.Printf("Rapport exporté vers : %s\n", outputPath)
+		}
 	},
 }
+

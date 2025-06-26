@@ -85,31 +85,8 @@ return Result{
     Message:      "Analyse terminée avec succès.",
     ErrorDetails: "",
 }
-}
 
-Run: func(cmd *cobra.Command, args []string) {
-	logs, err := config.LoadConfig(configPath)
-	if err != nil {
-	fmt.Printf("Erreur de chargement : %v\n", err)
-	os.Exit(1)
-	}
 
-	fmt.Println("Analyse en cours...")
-	results := analyzer.AnalyzeLogs(logs)
-	
-	for _, res := range results {
-		fmt.Printf("ID: %s | Statut: %s | Message: %s\n", res.LogID, res.Status, res.Message)
-		if res.ErrorDetails != "" {
-			fmt.Printf("  -> Détail : %s\n", res.ErrorDetails)
-		}
-	}
-	
-	if outputPath != "" {
-		if err := reporter.Export(results, outputPath); err != nil {
-			fmt.Printf("Erreur export JSON : %v\n", err)
-			os.Exit(1)
-		}
-		fmt.Printf("Rapport exporté vers : %s\n", outputPath)
-	}
+
 }
 

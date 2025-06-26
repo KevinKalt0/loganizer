@@ -28,5 +28,19 @@
     "id": "corrupted-log",
     "path": "test_logs/corrupted.log",
     "type": "custom-app"
+  },
+
+  
+
+  {
+    "id": "log1-ok",
+    "path": "logs/log1.log",
+    "type": "test"
+  },
+  
+  {
+    "id": "log3-ok",
+    "path": "logs/log3.log",
+    "type": "test"
   }
 ]
