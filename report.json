@@ -1,36 +1,17 @@
 [
   {
-    "log_id": "invalid-path",
-    "file_path": "/non/existent/log.log",
-    "status": "FAILED",
-    "message": "Fichier introuvable.",
-    "error_details": "CreateFile /non/existent/log.log: Le chemin d’accès spécifié est introuvable."
-  },
-  {
     "log_id": "db-server-3",
     "file_path": "test_logs/mysql_error.log",
     "status": "FAILED",
     "message": "Fichier introuvable.",
-    "error_details": "CreateFile test_logs/mysql_error.log: Le fichier spécifié est introuvable."
+    "error_details": "CreateFile test_logs/mysql_error.log: The system cannot find the file specified."
   },
   {
-    "log_id": "log3-ok",
-    "file_path": "logs/log3.log",
+    "log_id": "invalid-path",
+    "file_path": "/non/existent/log.log",
     "status": "FAILED",
-    "message": "Erreur de parsing.",
-    "error_details": "Erreur de parsing pour le log : log3-ok"
-  },
-  {
-    "log_id": "log1-ok",
-    "file_path": "logs/log1.log",
-    "status": "OK",
-    "message": "Analyse terminée avec succès."
-  },
-  {
-    "log_id": "corrupted-log",
-    "file_path": "test_logs/corrupted.log",
-    "status": "OK",
-    "message": "Analyse terminée avec succès."
+    "message": "Fichier introuvable.",
+    "error_details": "CreateFile /non/existent/log.log: The system cannot find the path specified."
   },
   {
     "log_id": "app-backend-2",
@@ -45,10 +26,15 @@
     "message": "Analyse terminée avec succès."
   },
   {
+    "log_id": "corrupted-log",
+    "file_path": "test_logs/corrupted.log",
+    "status": "OK",
+    "message": "Analyse terminée avec succès."
+  },
+  {
     "log_id": "web-server-1",
     "file_path": "test_logs/access.log",
-    "status": "FAILED",
-    "message": "Erreur de parsing.",
-    "error_details": "Erreur de parsing pour le log : web-server-1"
+    "status": "OK",
+    "message": "Analyse terminée avec succès."
   }
 ]
