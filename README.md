@@ -1,9 +1,9 @@
-# Loganalyzer
+# Loganizer
 
 ## Description
 
-**Loganalyzer** est un outil en ligne de commande (CLI) écrit en Go, permettant d’analyser efficacement plusieurs fichiers de logs en parallèle, de centraliser les résultats et de générer des rapports détaillés.  
-Il est conçu pour les administrateurs système et développeurs souhaitant automatiser l’analyse de journaux applicatifs ou serveurs.
+**Loganalyzer** est un outil en ligne de commande (CLI) écrit en Go, permettant d'analyser efficacement plusieurs fichiers de logs en parallèle, de centraliser les résultats et de générer des rapports détaillés.  
+Il est conçu pour les administrateurs système et développeurs souhaitant automatiser l'analyse de journaux applicatifs ou serveurs.
 
 ---
 
@@ -11,9 +11,9 @@ Il est conçu pour les administrateurs système et développeurs souhaitant auto
 
 - **Analyse concurrente** de plusieurs fichiers de logs (utilisation des goroutines et WaitGroup)
 - **Gestion robuste des erreurs** (fichier introuvable, parsing, etc.)
-- **Affichage d’un résumé clair** pour chaque log analysé
+- **Affichage d'un résumé clair** pour chaque log analysé
 - **Export des résultats** au format JSON (création automatique des dossiers si besoin)
-- **Extensible** : architecture modulaire, facile à enrichir avec de nouvelles commandes
+- **Extensible** : architecture modulaire, facile à enrichir avec de nouvelles commandes
 
 ---
 
@@ -74,11 +74,11 @@ loganalyzer analyze --config config.json
 
 ---
 
-## Installation
+## 🚀 Installation rapide
 
 1. **Cloner le dépôt**
    ```sh
-   git clone <url_du_repo>
+   git clone https://github.com/<votre-utilisateur>/<votre-repo>.git
    cd loganizer
    ```
 
@@ -87,9 +87,14 @@ loganalyzer analyze --config config.json
    go mod tidy
    ```
 
-3. **Compiler**
+3. **Compiler le projet**
    ```sh
    go build -o loganalyzer .
+   ```
+
+4. **Lancer l'outil**
+   ```sh
+   ./loganalyzer --help
    ```
 
 ---
@@ -98,23 +103,23 @@ loganalyzer analyze --config config.json
 
 - **cmd/** : commandes CLI (Cobra)
 - **internal/config/** : lecture du fichier de configuration JSON
-- **internal/analyzer/** : logique d’analyse, erreurs personnalisées
+- **internal/analyzer/** : logique d'analyse, erreurs personnalisées
 - **internal/reporter/** : export des résultats
 - **test_logs/** : exemples de logs pour tests
 
 ---
 
-## Membres de l’équipe
+## Membres de l'équipe
 
-- *À compléter avec les noms/prénoms de l’équipe*
+- *À compléter avec les noms/prénoms de l'équipe*
 
 ---
 
 ## Pour aller plus loin (bonus possibles)
 
-- Ajout d’une sous-commande `add-log` pour enrichir le fichier de configuration
+- Ajout d'une sous-commande `add-log` pour enrichir le fichier de configuration
 - Filtrage des résultats par statut (`--status OK/FAILED`)
-- Ajout d’un horodatage automatique dans le nom du rapport exporté
+- Ajout d'un horodatage automatique dans le nom du rapport exporté
 
 ---
 
@@ -126,7 +131,7 @@ MIT
 
 ## Aide
 
-Pour afficher l’aide :
+Pour afficher l'aide :
 ```sh
 loganalyzer --help
 loganalyzer analyze --help
